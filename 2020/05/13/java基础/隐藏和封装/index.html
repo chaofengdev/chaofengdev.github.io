@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/5 | welcome</title>
+  <title>java基础/隐藏和封装 | welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="welcome">
-<meta property="og:url" content="http://yoursite.com/archives/2020/05/page/2/index.html">
+  <meta name="description" content="5.4 隐藏和封装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础&#x2F;隐藏和封装">
+<meta property="og:url" content="http://yoursite.com/2020/05/13/java%E5%9F%BA%E7%A1%80/%E9%9A%90%E8%97%8F%E5%92%8C%E5%B0%81%E8%A3%85/index.html">
 <meta property="og:site_name" content="welcome">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="5.4 隐藏和封装">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-13T15:05:15.338Z">
+<meta property="article:modified_time" content="2020-05-13T15:05:15.338Z">
 <meta property="article:author" content="試毅-若尘">
 <meta property="article:tag" content="java，后端">
 <meta name="twitter:card" content="summary">
@@ -157,295 +159,247 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java基础/隐藏和封装" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java基础/隐藏和封装
+    </h1>
+  
+
+        
+        <a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E9%9A%90%E8%97%8F%E5%92%8C%E5%B0%81%E8%A3%85/" class="archive-article-date">
+  	<time datetime="2020-05-13T15:05:15.338Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="5-4-隐藏和封装"><a href="#5-4-隐藏和封装" class="headerlink" title="5.4 隐藏和封装"></a>5.4 隐藏和封装</h2><a id="more"></a>
+
+<h4 id="5-4-1-理解封装"><a href="#5-4-1-理解封装" class="headerlink" title="5.4.1 理解封装"></a>5.4.1 理解封装</h4><p>java面向对象三大特性：封装、继承和多态；</p>
+<p>封装（Encapsulation）指的是将对象的状态信息隐藏在对象内部，不允许外部程序直接访问对象的内部信息，通过该类所提供的方法来实现对内部信息的操作和访问。</p>
+<p>java中的封装通过访问控制符来实现。</p>
+<h4 id="5-4-2-使用访问控制符"><a href="#5-4-2-使用访问控制符" class="headerlink" title="5.4.2 使用访问控制符"></a>5.4.2 使用访问控制符</h4><p>java提供了三个访问控制符：private、protected和public，分别代表三个访问控制级别，另外还有一个不加任何访问控制符的访问控制级别，一共提供了4个访问控制级别，按照控制级别由大到小如下：</p>
+<p>private-&gt;default-&gt;protected-&gt;public</p>
+<p>具体内容老生常谈，这里暂时省略。</p>
+<h4 id="5-4-3-package、import和import-static"><a href="#5-4-3-package、import和import-static" class="headerlink" title="5.4.3 package、import和import static"></a>5.4.3 package、import和import static</h4><p>java中的包是为了解决重名问题的。java通过在类名之前增加一个前缀来限定这个类，我们将这个机制称为包（package）机制，该机制提供了类的多层命名空间，用于解决类的命名冲突、类文件管理等问题。java的包机制需要两个方面来保证，源文件里使用package语句指定包名，class文件必须放在对应的路径下。从这个角度来说，可以简单的将包理解为一层或多层文件夹。</p>
+<p>为了避免不同公司的类名的重复，建议使用公司的域名倒写来作为包名。package语句必须作为源文件的第一条非注释性语句。java默认为所有的源文件导入java.lang包下的所有类，因此可以自由在java类中使用String类、System类。如果使用其他的类，则需要导入。</p>
+<h4 id="5-4-4-java常用包"><a href="#5-4-4-java常用包" class="headerlink" title="5.4.4 java常用包"></a>5.4.4 java常用包</h4><ul>
+<li>java.lang：这个包下包含了java语言的核心类，系统自动导入这个包下的所有的类</li>
+<li>java.util：这个包下包含了大量工具类和集合框架</li>
+<li>java.net：java网络编程相关的类</li>
+<li>java.io：java输入输出编程相关的类/接口</li>
+<li>java.text：java格式化相关的类</li>
+<li>java.sql:java JDBC数据库编程的相关类和接口</li>
+<li>java.awt:抽象窗口工具集相关类和接口，主要用于构建图形用户界面</li>
+<li>java.swing：Swing图形用户界面编程的相关类和接口，可用于构建平台无关的GUI程序</li>
+</ul>
+<h2 id="5-5-深入构造器"><a href="#5-5-深入构造器" class="headerlink" title="5.5 深入构造器"></a>5.5 深入构造器</h2><h4 id="5-5-1-使用构造器进行初始化"><a href="#5-5-1-使用构造器进行初始化" class="headerlink" title="5.5.1 使用构造器进行初始化"></a>5.5.1 使用构造器进行初始化</h4><p>略</p>
+<h4 id="5-5-2-构造区重载"><a href="#5-5-2-构造区重载" class="headerlink" title="5.5.2 构造区重载"></a>5.5.2 构造区重载</h4><p>略</p>
+<h2 id="5-6-类的继承"><a href="#5-6-类的继承" class="headerlink" title="5.6 类的继承"></a>5.6 类的继承</h2><p>继承是面对对象的三大特性之一，也是软件复用的重要手段。java继承具有单继承的特点，每个子类只有一个直接父类。</p>
+<h4 id="5-6-1-继承的特点"><a href="#5-6-1-继承的特点" class="headerlink" title="5.6.1 继承的特点"></a>5.6.1 继承的特点</h4><p>java类的继承通过extends关键字来实现，实现继承的类被称为子类，被继承的类称为父类。</p>
+<p>extends更准确地翻译为：扩展。子类是对父类的扩展，子类是一种特殊的父类。子类扩展了父类，将可以获得父类的全部成员变量、方法和内部类，这与汉语中的继承有很好的类似性，值得指出的是java的子类不能获得父类的构造器。</p>
+<h4 id="5-6-2-重写父类的方法"><a href="#5-6-2-重写父类的方法" class="headerlink" title="5.6.2 重写父类的方法"></a>5.6.2 重写父类的方法</h4><p>子类扩展了父类，子类是一种特殊的父类。大部分时候，子类总是以父类作为基础，额外增加新的成员变量和方法。但是有一种情况下例外：子类需要重写父类的方法。</p>
+<p>先定义一个Bird类，类中有方法fly()：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bird</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我在天空自由飞翔、、、"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面定义一个Ostrich类，这个类是Bird类的子类，重写了Bird类的fly()方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Ostrich</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我在地上奔跑、、、"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">var</span> os = <span class="keyword">new</span> Ostrch();</span><br><span class="line">        os.fly();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行上面的程序，我们可以看到os.fly()执行的不再是Bird类的fly()方法，而是执行Ostrich类的fly()方法。</p>
+<p>这种子类包含父类同名方法的现象叫做：方法重写Override，也称之为方法覆盖。</p>
+<p>简单介绍一下概念，其他暂时略。</p>
+<h4 id="5-6-3-super限定"><a href="#5-6-3-super限定" class="headerlink" title="5.6.3 super限定"></a>5.6.3 super限定</h4><p>super是java提供的一个关键字，它限定该对象调用它从父类继承得到的实例变量和方法。</p>
+<h4 id="5-6-4-调用父类构造器"><a href="#5-6-4-调用父类构造器" class="headerlink" title="5.6.4 调用父类构造器"></a>5.6.4 调用父类构造器</h4><p>略</p>
+<h2 id="5-7-多态"><a href="#5-7-多态" class="headerlink" title="5.7 多态"></a>5.7 多态</h2><p>java引用变量有两个类型：一个是编译时类型，一个是运行时类型。编译时类型有声明该变量时的类型决定，运行时类型由实际赋值给该变量的对象决定。如果编译时类型和运行时类型不一样，就可能出现所谓的多态。</p>
+<h4 id="5-7-1-多态性"><a href="#5-7-1-多态性" class="headerlink" title="5.7.1 多态性"></a>5.7.1 多态性</h4><p>略</p>
+<h4 id="5-7-2-引用类型的强制类型转换"><a href="#5-7-2-引用类型的强制类型转换" class="headerlink" title="5.7.2 引用类型的强制类型转换"></a>5.7.2 引用类型的强制类型转换</h4><p><strong>编写java程序时，引用变量只能调用它编译时类型的方法，而不能调用它运行时类型的方法，即使它实际所引用的对象确实包含该方法</strong></p>
+<p>好好体会这句话。。。</p>
+<h4 id="5-7-3-instanceof运算符"><a href="#5-7-3-instanceof运算符" class="headerlink" title="5.7.3 instanceof运算符"></a>5.7.3 instanceof运算符</h4><p>它用于判断前面的对象是否是后面的类，或者是其子类、实例。如果是，则返回true，否则返回false。</p>
+<h2 id="5-8-继承和组合"><a href="#5-8-继承和组合" class="headerlink" title="5.8 继承和组合"></a>5.8 继承和组合</h2><p>继承是实现类复用的重要手段，但是继承带来了一个最大的坏处就是：破坏了封装。相比之下，组合也是实现类复用的重要方式，而采用组合方式来实现类复用可以带来更好的封装性。下面将详细解释继承和组合之间的联系和区别。</p>
+<h4 id="5-8-1-使用继承的注意点"><a href="#5-8-1-使用继承的注意点" class="headerlink" title="5.8.1 使用继承的注意点"></a>5.8.1 使用继承的注意点</h4><p>继承带来严重的问题：前面介绍封装的时候我们知道，每个类都应该封装它的内部实现和细节，但是有继承关系的子类可以直接访问父类的成员变量和方法，从而造成了父类和子类的严重耦合。</p>
+<p>对很多初学者而言，何时使用继承关系是一个难以把握的问题。这里给出使用继承的两个条件：</p>
+<ul>
+<li>子类需要额外增加成员变量，而不是仅仅改变成员变量的数值。</li>
+<li>子类需要增加自己独有的行为方式。（包括增加新的方法和重写父类的方法）</li>
+</ul>
+<h4 id="5-8-2-利用组合实现复用（重点理解）"><a href="#5-8-2-利用组合实现复用（重点理解）" class="headerlink" title="5.8.2 利用组合实现复用（重点理解）"></a>5.8.2 <strong>利用组合实现复用（重点理解）</strong></h4><p>如果需要复用一个类，除了把这个类当成基类来继承，还可以把该类当成另一个类的组合成分，从而允许新类直接复用该类的public方法。不管是继承还是组合，都允许在新类中直接复用旧类的方法。</p>
+<p>对于继承而言，子类可以直接获得父类的public方法，程序使用子类，将可以直接访问子类从父类那里继承的方法。但组合不同，组合是把旧类对象作为新类的成员变量组合进来，用以实现新类的功能，用户看到的是新类的方法，而不是被组合对象的方法。因此，通常需要在新类里使用private修饰被组合的旧类对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"心脏跳动、、、"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">breathe</span><span class="params">()</span></span>&#123;</span><br><span class="line">        beat();</span><br><span class="line">        System.out.println(<span class="string">"呼吸"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//继承Animal类，直接复用父类的breathe()方法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我在天空自由飞翔、、、"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//继承Animal类，直接复用父类的breathe()方法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Wolf</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"快速奔跑"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Bird b = <span class="keyword">new</span> Bird();</span><br><span class="line">        b.breathe();</span><br><span class="line">        b.fly();</span><br><span class="line">        Wolf w = <span class="keyword">new</span> Wolf();</span><br><span class="line">        w.breathe();</span><br><span class="line">        w.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码是典型的通过继承来复用软件。仅仅从软件复用的角度来看，将上面三个类的定义改为如下形式也可以实现相同的复用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"心脏跳动、、、"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">breathe</span><span class="params">()</span></span>&#123;</span><br><span class="line">        beat();</span><br><span class="line">        System.out.println(<span class="string">"呼吸"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Animal a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Bird</span><span class="params">(Animal a)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">breathe</span><span class="params">()</span></span>&#123;</span><br><span class="line">        a.breath();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"自由飞翔"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Wolf</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Animal a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Wolf</span><span class="params">(Animal a)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">breath</span><span class="params">()</span></span>&#123;</span><br><span class="line">        a.breathe();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">       	System.out.println(<span class="string">"快速奔跑"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//显式创建被组合的对象</span></span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal();</span><br><span class="line">        Bird b = <span class="keyword">new</span> Bird(a);</span><br><span class="line">        b.breathe();</span><br><span class="line">        b.fly();</span><br><span class="line">        <span class="comment">//显式创建被组合的对象</span></span><br><span class="line">        Animal c = <span class="keyword">new</span> Animal();</span><br><span class="line">        Wolf w = <span class="keyword">new</span> Wolf(c);</span><br><span class="line">        w.breathe();</span><br><span class="line">        w.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过分析上述两种代码的表达方式，我们可以得出：</p>
+<p>继承表达的是“是 is a ”的关系，而组合表达的是“有 has a”的关系。</p>
+<h2 id="5-9-初始化块"><a href="#5-9-初始化块" class="headerlink" title="5.9 初始化块"></a>5.9 初始化块</h2><p>略，简单知识点，以后补充。</p>
+<p>对jiva对象进行初始化操作，与构造器作用类似。</p>
+<h2 id="5-10-本章小结"><a href="#5-10-本章小结" class="headerlink" title="5.10 本章小结"></a>5.10 本章小结</h2><p>面向对象的三大特性，仍然属于基础知识点。目前的主要任务是加快节奏，尽快学完java se。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/tecentpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:04:07.624Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84/">java基础/分支结构</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/13/java%E5%9F%BA%E7%A1%80/%E9%9A%90%E8%97%8F%E5%92%8C%E5%B0%81%E8%A3%85/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E9%87%8A/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:03:31.790Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/05/14/java%E5%9F%BA%E7%A1%80/List%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java基础/List的基本使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java基础/类和对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E9%87%8A/">java基础/注释</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-隐藏和封装"><span class="toc-number">1.</span> <span class="toc-text">5.4 隐藏和封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-1-理解封装"><span class="toc-number">1.0.1.</span> <span class="toc-text">5.4.1 理解封装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-2-使用访问控制符"><span class="toc-number">1.0.2.</span> <span class="toc-text">5.4.2 使用访问控制符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-3-package、import和import-static"><span class="toc-number">1.0.3.</span> <span class="toc-text">5.4.3 package、import和import static</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-4-java常用包"><span class="toc-number">1.0.4.</span> <span class="toc-text">5.4.4 java常用包</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-深入构造器"><span class="toc-number">2.</span> <span class="toc-text">5.5 深入构造器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-1-使用构造器进行初始化"><span class="toc-number">2.0.1.</span> <span class="toc-text">5.5.1 使用构造器进行初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-2-构造区重载"><span class="toc-number">2.0.2.</span> <span class="toc-text">5.5.2 构造区重载</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-类的继承"><span class="toc-number">3.</span> <span class="toc-text">5.6 类的继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-1-继承的特点"><span class="toc-number">3.0.1.</span> <span class="toc-text">5.6.1 继承的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-2-重写父类的方法"><span class="toc-number">3.0.2.</span> <span class="toc-text">5.6.2 重写父类的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-3-super限定"><span class="toc-number">3.0.3.</span> <span class="toc-text">5.6.3 super限定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-4-调用父类构造器"><span class="toc-number">3.0.4.</span> <span class="toc-text">5.6.4 调用父类构造器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7-多态"><span class="toc-number">4.</span> <span class="toc-text">5.7 多态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-1-多态性"><span class="toc-number">4.0.1.</span> <span class="toc-text">5.7.1 多态性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-2-引用类型的强制类型转换"><span class="toc-number">4.0.2.</span> <span class="toc-text">5.7.2 引用类型的强制类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-3-instanceof运算符"><span class="toc-number">4.0.3.</span> <span class="toc-text">5.7.3 instanceof运算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-8-继承和组合"><span class="toc-number">5.</span> <span class="toc-text">5.8 继承和组合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-8-1-使用继承的注意点"><span class="toc-number">5.0.1.</span> <span class="toc-text">5.8.1 使用继承的注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-8-2-利用组合实现复用（重点理解）"><span class="toc-number">5.0.2.</span> <span class="toc-text">5.8.2 利用组合实现复用（重点理解）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-9-初始化块"><span class="toc-number">6.</span> <span class="toc-text">5.9 初始化块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-10-本章小结"><span class="toc-number">7.</span> <span class="toc-text">5.10 本章小结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:02:43.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">java基础/面向对象</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/java%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:00:25.684Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/java%E5%9F%BA%E7%A1%80/java%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2/">java基础/java语言的发展简史</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E6%B3%9B%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-05-13T14:58:08.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E6%B3%9B%E5%9E%8B/">java基础/泛型</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/collextion%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-05-13T11:06:01.324Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/java%E5%9F%BA%E7%A1%80/collextion%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BD%BF%E7%94%A8/">java基础/collextion接口的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-05-13T11:05:15.407Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/java%E5%9F%BA%E7%A1%80/%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/">java基础/迭代器的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-05-07T02:40:26.773Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%BE%85%E7%BB%AD%EF%BC%89/">博客搭建/hexo搭建静态博客（待续）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/07/java%E5%9F%BA%E7%A1%80/%E7%BB%9F%E8%AE%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-05-07T01:40:31.796Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/07/java%E5%9F%BA%E7%A1%80/%E7%BB%9F%E8%AE%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0/">java基础/统计字符串个数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/07/java%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
-  	<time datetime="2020-05-07T01:40:29.407Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/07/java%E5%9F%BA%E7%A1%80/%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2/">java基础/数组拼接字符串</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/05/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/05/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -469,8 +423,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
